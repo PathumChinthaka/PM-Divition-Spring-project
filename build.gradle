@@ -24,13 +24,13 @@ tasks.withType(JavaCompile) {
 dependencies {
     compileOnly('javax.servlet:javax.servlet-api:4.0.1')
     implementation('org.springframework:spring-webmvc:5.3.23')
-    implementation('org.springframework:spring-orm:5.3.18')
+    implementation('org.springframework:spring-orm:5.3.23')
     implementation('mysql:mysql-connector-java:8.0.30')
-    implementation('org.springframework:spring-context:5.3.21')
+    implementation('org.springframework:spring-context:5.3.22')
     implementation('org.projectlombok:lombok:1.18.28')
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
     implementation('org.hibernate:hibernate-core:5.6.9.Final')
-    implementation('org.springframework.data:spring-data-jpa:2.5.4')
+    implementation('org.springframework.data:spring-data-jpa:2.7.6')
     implementation('org.modelmapper:modelmapper:3.1.1')
     implementation('com.fasterxml.jackson.core:jackson-databind:2.15.2')
 

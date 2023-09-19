@@ -3,11 +3,9 @@ package lk.topcat.topcatpmdivition.api.api;
 import lk.topcat.topcatpmdivition.api.dto.ProjectDTO;
 import lk.topcat.topcatpmdivition.api.service.custom.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -20,13 +18,27 @@ public class HandleProjectData {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ProjectDTO saveData(
             @RequestBody String projectName,
-            @RequestBody Date startDate,
-            @RequestBody Date endDate
+            Date startDate,
+            Date endDate
+    ){
+       ProjectDTO projectDTO=new ProjectDTO();
+       projectDTO.setProjectName(projectName);
+       projectDTO.setStartDate(startDate);
+       projectDTO.setEndDate(endDate);
+       return projectService.saveData(projectDTO);
+    }
+
+    @PutMapping("{id}")
+    public void updateData(
+            @PathVariable String id,
+            @RequestPart String projectName,
+            @RequestPart Date startDate,
+            @RequestPart Date endDate
     ){
         ProjectDTO projectDTO=new ProjectDTO();
         projectDTO.setProjectName(projectName);
         projectDTO.setStartDate(startDate);
         projectDTO.setEndDate(endDate);
-        return projectService.saveData(projectDTO);
+        projectService.updateData(id,projectDTO);
     }
 }

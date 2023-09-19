@@ -13,12 +13,15 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @ToString
-@Entity
+@Entity(name = "TechLead")
 public class TechLead implements SuperEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "tlid")
     private String techLeadId;
+    @Column(name = "name")
     private String name;
+    @Column(name = "expertist")
     private String expertist;
     @OneToMany(mappedBy = "techLead",cascade = CascadeType.ALL)
     private List<Project> projectList;

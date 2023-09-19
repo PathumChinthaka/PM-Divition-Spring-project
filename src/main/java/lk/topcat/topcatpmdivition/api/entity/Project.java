@@ -20,7 +20,7 @@ public class Project implements SuperEntity {
     private String projectName;
     private Date startDate;
     private Date endDate;
-    @ManyToOne
+    @ManyToOne(targetEntity = TechLead.class)
     @JoinColumn(name = "techLeadId")
     private TechLead techLead;
 }
