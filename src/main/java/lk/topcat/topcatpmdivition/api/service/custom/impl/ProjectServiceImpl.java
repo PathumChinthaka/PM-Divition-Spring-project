@@ -6,7 +6,6 @@ import lk.topcat.topcatpmdivition.api.repository.ProjectRepository;
 import lk.topcat.topcatpmdivition.api.service.custom.ProjectService;
 import lk.topcat.topcatpmdivition.api.util.EnitityDTOConversion;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;

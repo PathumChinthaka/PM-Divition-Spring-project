@@ -41,4 +41,9 @@ public class HandleProjectData {
         projectDTO.setEndDate(endDate);
         projectService.updateData(id,projectDTO);
     }
+
+    @DeleteMapping("{id}")
+    public void deleteData(@PathVariable String id){
+        projectService.deleteData(id);
+    }
 }

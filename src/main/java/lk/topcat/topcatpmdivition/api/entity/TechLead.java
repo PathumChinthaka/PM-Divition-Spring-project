@@ -17,7 +17,6 @@ import java.util.List;
 public class TechLead implements SuperEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "tlid")
     private String techLeadId;
     @Column(name = "name")
     private String name;
