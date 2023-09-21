@@ -45,7 +45,9 @@ public class TLServiceImpl implements TLService {
     }
 
     @Override
-    public TechLeadDTO getData(String id) {
-        return null;
+    public TechLeadDTO getData(String techLeadId) {
+        if(!techLeadRepository.existsById(techLeadId)) throw new RuntimeException("Invalid Id");
+        TechLead techLeadByid=techLeadRepository.findAllById(techLeadId);
+        return dtoConversion.getTLDTO(techLeadByid);
     }
 }
